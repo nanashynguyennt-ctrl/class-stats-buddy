@@ -1,4 +1,4 @@
-import { TrainingRecord, FORMAT_LABELS, CATEGORY_LABELS } from '@/types/training';
+import { TrainingRecord, FORMAT_LABELS, CATEGORY_LABELS, calcDuration } from '@/types/training';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
 import jsPDF from 'jspdf';
