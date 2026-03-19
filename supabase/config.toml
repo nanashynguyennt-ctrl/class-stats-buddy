@@ -1,0 +1,4 @@
+project_id = "mefvsnlzvslkduqqecim"
+
+[functions.training-chat]
+verify_jwt = false

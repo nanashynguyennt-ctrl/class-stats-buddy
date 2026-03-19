@@ -4,6 +4,7 @@ import { DashboardStats } from '@/components/DashboardStats';
 import { TrainingTable } from '@/components/TrainingTable';
 import { TrainingFormDialog } from '@/components/TrainingFormDialog';
 import { FactoryManager } from '@/components/FactoryManager';
+import { AIChatbot } from '@/components/AIChatbot';
 import { exportToExcel, exportToPDF } from '@/utils/exportUtils';
 import { TrainingRecord } from '@/types/training';
 import { Button } from '@/components/ui/button';
@@ -110,6 +111,7 @@ export default function Index() {
 
       <TrainingFormDialog open={showForm} onClose={() => { setShowForm(false); setEditingRecord(undefined); }} onSubmit={handleSubmit} factories={factories} initial={editingRecord} />
       <FactoryManager open={showFactory} onClose={() => setShowFactory(false)} factories={factories} onAdd={addFactory} onRemove={removeFactory} />
+      <AIChatbot records={records} />
     </div>
   );
 }
