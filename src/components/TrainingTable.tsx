@@ -14,6 +14,7 @@ interface Props {
 const formatBadgeClass: Record<string, string> = {
   online: 'bg-success/20 text-success border-success/30',
   offline: 'bg-warning/20 text-warning border-warning/30',
+  eln: 'bg-primary/20 text-primary border-primary/30',
 };
 
 const categoryBadgeClass: Record<string, string> = {

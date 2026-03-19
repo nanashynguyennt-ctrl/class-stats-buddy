@@ -1,4 +1,4 @@
-export type TrainingFormat = 'online' | 'offline';
+export type TrainingFormat = 'online' | 'offline' | 'eln';
 export type TrainingCategory = 'external' | 'internal' | 'inhouse';
 
 export interface FactoryAttendance {
@@ -22,6 +22,7 @@ export interface TrainingRecord {
 export const FORMAT_LABELS: Record<TrainingFormat, string> = {
   online: 'Online',
   offline: 'Offline',
+  eln: 'ELN',
 };
 
 export const CATEGORY_LABELS: Record<TrainingCategory, string> = {
