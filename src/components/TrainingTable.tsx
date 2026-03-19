@@ -1,4 +1,4 @@
-import { TrainingRecord, FORMAT_LABELS, CATEGORY_LABELS } from '@/types/training';
+import { TrainingRecord, FORMAT_LABELS, CATEGORY_LABELS, calcDuration } from '@/types/training';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -43,6 +43,7 @@ export function TrainingTable({ records, factories, onEdit, onDelete }: Props) {
               <TableHead className="text-muted-foreground font-semibold text-xs uppercase tracking-wider">Tên khóa học</TableHead>
               <TableHead className="text-muted-foreground font-semibold text-xs uppercase tracking-wider">Ngày</TableHead>
               <TableHead className="text-muted-foreground font-semibold text-xs uppercase tracking-wider">Thời gian</TableHead>
+              <TableHead className="text-muted-foreground font-semibold text-xs uppercase tracking-wider">Tổng giờ</TableHead>
               <TableHead className="text-muted-foreground font-semibold text-xs uppercase tracking-wider">Hình thức</TableHead>
               <TableHead className="text-muted-foreground font-semibold text-xs uppercase tracking-wider">Phân loại</TableHead>
               <TableHead className="text-muted-foreground font-semibold text-xs uppercase tracking-wider text-right">Tổng HV</TableHead>
@@ -60,7 +61,8 @@ export function TrainingTable({ records, factories, onEdit, onDelete }: Props) {
                 <TableCell className="text-muted-foreground">{i + 1}</TableCell>
                 <TableCell className="font-medium max-w-[200px] truncate">{r.courseName}</TableCell>
                 <TableCell>{r.date}</TableCell>
-                <TableCell>{r.time}</TableCell>
+                <TableCell>{r.startTime} - {r.endTime}</TableCell>
+                <TableCell className="text-accent font-medium">{calcDuration(r.startTime, r.endTime)}</TableCell>
                 <TableCell>
                   <Badge variant="outline" className={formatBadgeClass[r.format]}>{FORMAT_LABELS[r.format]}</Badge>
                 </TableCell>

@@ -1,4 +1,4 @@
-import { TrainingRecord, FORMAT_LABELS, CATEGORY_LABELS } from '@/types/training';
+import { TrainingRecord, FORMAT_LABELS, CATEGORY_LABELS, calcDuration } from '@/types/training';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
 import jsPDF from 'jspdf';
@@ -10,7 +10,8 @@ function buildRows(records: TrainingRecord[], factories: string[]) {
       i + 1,
       r.courseName,
       r.date,
-      r.time,
+      `${r.startTime} - ${r.endTime}`,
+      calcDuration(r.startTime, r.endTime),
       FORMAT_LABELS[r.format],
       CATEGORY_LABELS[r.category],
       r.totalStudents,
@@ -26,7 +27,7 @@ function buildRows(records: TrainingRecord[], factories: string[]) {
 
 function buildHeaders(factories: string[]) {
   return [
-    'STT', 'Tên khóa học', 'Ngày', 'Thời gian', 'Hình thức',
+    'STT', 'Tên khóa học', 'Ngày', 'Thời gian', 'Tổng giờ', 'Hình thức',
     'Phân loại', 'Tổng HV',
     ...factories.map(f => `HV ${f}`),
     'Giảng viên', 'Vendor',
