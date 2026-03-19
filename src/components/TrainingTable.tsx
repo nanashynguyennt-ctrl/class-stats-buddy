@@ -43,6 +43,7 @@ export function TrainingTable({ records, factories, onEdit, onDelete }: Props) {
               <TableHead className="text-muted-foreground font-semibold text-xs uppercase tracking-wider">Tên khóa học</TableHead>
               <TableHead className="text-muted-foreground font-semibold text-xs uppercase tracking-wider">Ngày</TableHead>
               <TableHead className="text-muted-foreground font-semibold text-xs uppercase tracking-wider">Thời gian</TableHead>
+              <TableHead className="text-muted-foreground font-semibold text-xs uppercase tracking-wider">Tổng giờ</TableHead>
               <TableHead className="text-muted-foreground font-semibold text-xs uppercase tracking-wider">Hình thức</TableHead>
               <TableHead className="text-muted-foreground font-semibold text-xs uppercase tracking-wider">Phân loại</TableHead>
               <TableHead className="text-muted-foreground font-semibold text-xs uppercase tracking-wider text-right">Tổng HV</TableHead>
