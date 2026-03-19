@@ -61,7 +61,8 @@ export function TrainingTable({ records, factories, onEdit, onDelete }: Props) {
                 <TableCell className="text-muted-foreground">{i + 1}</TableCell>
                 <TableCell className="font-medium max-w-[200px] truncate">{r.courseName}</TableCell>
                 <TableCell>{r.date}</TableCell>
-                <TableCell>{r.time}</TableCell>
+                <TableCell>{r.startTime} - {r.endTime}</TableCell>
+                <TableCell className="text-accent font-medium">{calcDuration(r.startTime, r.endTime)}</TableCell>
                 <TableCell>
                   <Badge variant="outline" className={formatBadgeClass[r.format]}>{FORMAT_LABELS[r.format]}</Badge>
                 </TableCell>
