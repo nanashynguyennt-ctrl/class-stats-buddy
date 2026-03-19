@@ -7,6 +7,9 @@ import { FactoryManager } from '@/components/FactoryManager';
 import { AIChatbot } from '@/components/AIChatbot';
 import { exportToExcel, exportToPDF } from '@/utils/exportUtils';
 import { TrainingRecord } from '@/types/training';
+import { Button } from '@/components/ui/button';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Plus, FileSpreadsheet, FileText, Factory, GraduationCap } from 'lucide-react';
 
 function getMonthOptions() {
   const months: string[] = [];
