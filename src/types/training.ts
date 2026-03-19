@@ -1,4 +1,4 @@
-export type TrainingFormat = 'online' | 'offline';
+export type TrainingFormat = 'online' | 'offline' | 'eln';
 export type TrainingCategory = 'external' | 'internal' | 'inhouse';
 
 export interface FactoryAttendance {
