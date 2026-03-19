@@ -108,6 +108,7 @@ export default function Index() {
 
       <TrainingFormDialog open={showForm} onClose={() => { setShowForm(false); setEditingRecord(undefined); }} onSubmit={handleSubmit} factories={factories} initial={editingRecord} />
       <FactoryManager open={showFactory} onClose={() => setShowFactory(false)} factories={factories} onAdd={addFactory} onRemove={removeFactory} />
+      <AIChatbot records={records} />
     </div>
   );
 }
