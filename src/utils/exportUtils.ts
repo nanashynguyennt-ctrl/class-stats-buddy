@@ -28,7 +28,7 @@ function buildRows(records: TrainingRecord[], factories: string[]) {
 
 function buildHeaders(factories: string[]) {
   return [
-    'STT', 'Tên khóa học', 'Ngày', 'Thời gian', 'Tổng giờ', 'Hình thức',
+    'STT', 'Tên khóa học', 'Ngày bắt đầu', 'Ngày kết thúc', 'Thời gian', 'Tổng giờ', 'Hình thức',
     'Phân loại', 'Tổng HV',
     ...factories.map(f => `HV ${f}`),
     'Giảng viên', 'Vendor',
