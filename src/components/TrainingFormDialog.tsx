@@ -30,13 +30,13 @@ export function TrainingFormDialog({ open, onClose, onSubmit, factories, initial
       initial.factoryAttendance.forEach(f => { factoryCounts[f.factoryName] = f.count; });
       setForm({
         courseName: initial.courseName, date: initial.date,
-        startTime: initial.startTime, endTime: initial.endTime,
+        endDate: initial.endDate || '', startTime: initial.startTime, endTime: initial.endTime,
         format: initial.format, category: initial.category,
         totalStudents: initial.totalStudents, instructor: initial.instructor,
         vendor: initial.vendor, factoryCounts,
       });
     } else {
-      setForm({ courseName: '', date: '', startTime: '08:00', endTime: '17:00', format: 'offline', category: 'internal', totalStudents: 0, instructor: '', vendor: '', factoryCounts: {} });
+      setForm({ courseName: '', date: '', endDate: '', startTime: '08:00', endTime: '17:00', format: 'offline', category: 'internal', totalStudents: 0, instructor: '', vendor: '', factoryCounts: {} });
     }
   }, [initial, open]);
 
@@ -45,7 +45,7 @@ export function TrainingFormDialog({ open, onClose, onSubmit, factories, initial
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSubmit({
-      courseName: form.courseName, date: form.date,
+      courseName: form.courseName, date: form.date, endDate: form.endDate,
       startTime: form.startTime, endTime: form.endTime,
       format: form.format, category: form.category,
       totalStudents: form.totalStudents, instructor: form.instructor,
