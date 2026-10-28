@@ -24,13 +24,19 @@ function loadSaved<T>(key: string, fallback: T): T {
 
 export function useTrainingData() {
   const [records, setRecords] = useState<TrainingRecord[]>(() => {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    return saved ? JSON.parse(saved) : [];
+    const loaded = loadSaved<TrainingRecord[]>(STORAGE_KEY, []);
+    return loaded.map(r => ({
+      ...r,
+      factoryAttendance: r.factoryAttendance.map(f => ({
+        ...f,
+        factoryName: FACTORY_RENAMES[f.factoryName] || f.factoryName,
+      })),
+    }));
   });
 
   const [factories, setFactories] = useState<string[]>(() => {
-    const saved = localStorage.getItem(FACTORIES_KEY);
-    return saved ? JSON.parse(saved) : DEFAULT_FACTORIES;
+    const loaded = loadSaved<string[]>(FACTORIES_KEY, DEFAULT_FACTORIES);
+    return loaded.map(f => FACTORY_RENAMES[f] || f);
   });
 
   useEffect(() => {

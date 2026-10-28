@@ -17,7 +17,7 @@ interface Props {
 
 export function TrainingFormDialog({ open, onClose, onSubmit, factories, initial }: Props) {
   const [form, setForm] = useState({
-    courseName: '', date: '', startTime: '08:00', endTime: '17:00',
+    courseName: '', date: '', endDate: '', startTime: '08:00', endTime: '17:00',
     format: 'offline' as TrainingFormat,
     category: 'internal' as TrainingCategory, totalStudents: 0,
     instructor: '', vendor: '',
