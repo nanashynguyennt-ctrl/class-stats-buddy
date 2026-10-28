@@ -10,6 +10,7 @@ function buildRows(records: TrainingRecord[], factories: string[]) {
       i + 1,
       r.courseName,
       r.date,
+      r.endDate || '',
       `${r.startTime} - ${r.endTime}`,
       calcDuration(r.startTime, r.endTime),
       FORMAT_LABELS[r.format],
