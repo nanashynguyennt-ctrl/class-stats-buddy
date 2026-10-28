@@ -41,7 +41,8 @@ export function TrainingTable({ records, factories, onEdit, onDelete }: Props) {
             <TableRow className="border-border/50 hover:bg-transparent">
               <TableHead className="text-muted-foreground font-semibold text-xs uppercase tracking-wider">STT</TableHead>
               <TableHead className="text-muted-foreground font-semibold text-xs uppercase tracking-wider">Tên khóa học</TableHead>
-              <TableHead className="text-muted-foreground font-semibold text-xs uppercase tracking-wider">Ngày</TableHead>
+              <TableHead className="text-muted-foreground font-semibold text-xs uppercase tracking-wider">Ngày bắt đầu</TableHead>
+              <TableHead className="text-muted-foreground font-semibold text-xs uppercase tracking-wider">Ngày kết thúc</TableHead>
               <TableHead className="text-muted-foreground font-semibold text-xs uppercase tracking-wider">Thời gian</TableHead>
               <TableHead className="text-muted-foreground font-semibold text-xs uppercase tracking-wider">Tổng giờ</TableHead>
               <TableHead className="text-muted-foreground font-semibold text-xs uppercase tracking-wider">Hình thức</TableHead>
@@ -61,6 +62,7 @@ export function TrainingTable({ records, factories, onEdit, onDelete }: Props) {
                 <TableCell className="text-muted-foreground">{i + 1}</TableCell>
                 <TableCell className="font-medium max-w-[200px] truncate">{r.courseName}</TableCell>
                 <TableCell>{r.date}</TableCell>
+                <TableCell>{r.endDate || '—'}</TableCell>
                 <TableCell>{r.startTime} - {r.endTime}</TableCell>
                 <TableCell className="text-accent font-medium">{calcDuration(r.startTime, r.endTime)}</TableCell>
                 <TableCell>
