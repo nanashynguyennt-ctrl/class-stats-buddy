@@ -10,6 +10,7 @@ export interface TrainingRecord {
   id: string;
   courseName: string;
   date: string;
+  endDate: string;
   startTime: string;
   endTime: string;
   format: TrainingFormat;

@@ -4,7 +4,23 @@ import { TrainingRecord } from '@/types/training';
 const STORAGE_KEY = 'training-records';
 const FACTORIES_KEY = 'factory-list';
 
-const DEFAULT_FACTORIES = ['Nhà máy A', 'Nhà máy B'];
+const DEFAULT_FACTORIES = ['TLLT', 'NTL'];
+
+// Rename legacy factory names to the official abbreviations.
+const FACTORY_RENAMES: Record<string, string> = {
+  'Nhà máy A': 'TLLT',
+  'Nhà máy B': 'NTL',
+};
+
+function loadSaved<T>(key: string, fallback: T): T {
+  const saved = localStorage.getItem(key);
+  if (!saved) return fallback;
+  try {
+    return JSON.parse(saved) as T;
+  } catch {
+    return fallback;
+  }
+}
 
 export function useTrainingData() {
   const [records, setRecords] = useState<TrainingRecord[]>(() => {
