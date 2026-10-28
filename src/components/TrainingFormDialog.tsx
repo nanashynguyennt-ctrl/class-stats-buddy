@@ -77,10 +77,10 @@ export function TrainingFormDialog({ open, onClose, onSubmit, factories, initial
             </div>
             <div className="flex flex-col">
               <Label>Thời gian</Label>
-              <div className="flex items-center gap-1.5">
-                <Input type="time" required value={form.startTime} onChange={e => setForm(p => ({ ...p, startTime: e.target.value }))} className="flex-1" />
-                <span className="text-muted-foreground text-sm">→</span>
-                <Input type="time" required value={form.endTime} onChange={e => setForm(p => ({ ...p, endTime: e.target.value }))} className="flex-1" />
+              <div className="flex items-center gap-1">
+                <Input type="time" required value={form.startTime} onChange={e => setForm(p => ({ ...p, startTime: e.target.value }))} className="flex-1 min-w-0 px-2 text-xs h-9" />
+                <span className="shrink-0 text-muted-foreground text-xs">→</span>
+                <Input type="time" required value={form.endTime} onChange={e => setForm(p => ({ ...p, endTime: e.target.value }))} className="flex-1 min-w-0 px-2 text-xs h-9" />
               </div>
               {duration && (
                 <div className="flex items-center gap-1 mt-1 text-xs text-accent">
