@@ -68,8 +68,12 @@ export function TrainingFormDialog({ open, onClose, onSubmit, factories, initial
               <Input required value={form.courseName} onChange={e => setForm(p => ({ ...p, courseName: e.target.value }))} />
             </div>
             <div>
-              <Label>Ngày</Label>
+              <Label>Ngày bắt đầu</Label>
               <Input type="date" required value={form.date} onChange={e => setForm(p => ({ ...p, date: e.target.value }))} />
+            </div>
+            <div>
+              <Label>Ngày kết thúc</Label>
+              <Input type="date" value={form.endDate} onChange={e => setForm(p => ({ ...p, endDate: e.target.value }))} />
             </div>
             <div className="flex flex-col">
               <Label>Thời gian</Label>
